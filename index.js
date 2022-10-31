@@ -6,6 +6,7 @@ const arrDobleLetter = arrName.map((ind) => ind+ind);
 const res = arrDobleLetter.join('');
 console.log(res);
 
+// OR
 
 function repetitionOfLetters() {
     let doubling = '';
