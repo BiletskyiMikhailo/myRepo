@@ -44,3 +44,38 @@ function showProgrammingLangs(plan) {
 }
 
 showProgrammingLangs(personalPlanPeter);
+
+
+
+
+
+// The task of determining the available currencies in the 'ATM'
+
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'PLN', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    let str = '';
+    arr.length === 0 ? str = 'Доступні валюти відсутні' : str = 'Доступні валюти:\n';
+
+    arr.forEach(function(curr, i) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+
+    // OR
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === missingCurr) {
+    //         continue;
+    //     }
+    //     str += `${arr[i]}\n`;
+    // }
+
+    return str;
+}
+
+availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY')
