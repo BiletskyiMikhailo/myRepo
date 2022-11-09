@@ -79,3 +79,58 @@ function availableCurr(arr, missingCurr) {
 }
 
 availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY')
+
+
+
+
+
+// The task of determining whether the budget is sufficient to pay for heating 
+
+
+
+
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10, 
+            length: 5 
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5, 
+    moneyPer1m3: 30,
+    budget: 100000
+}
+
+function isBudgetEnough(data) {
+     let area = 0;
+     let volume = 0;
+ 
+     data.shops.forEach( shop => {
+        area += shop.width * shop.length;
+
+     });
+     volume = data.height * area;
+
+ if ( data.moneyPer1m3 * volume > data.budget ) { 
+    console.log(`Бюджету не достатньо`);
+ } else {
+    console.log ( `Бюджету достатньо`);
+ }
+
+
+    
+};
+
+isBudgetEnough(shoppingMallData);
